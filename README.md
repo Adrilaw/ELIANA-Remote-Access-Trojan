@@ -48,6 +48,7 @@ This tool enables security testers with explicit permission to remotely execute 
 
 `sessioid ALL [command]`             # Execute on all active sessions
 
+
 ✨ Key Features
 
 ✅ True Persistence - Survives reboot via Registry, Scheduled Tasks, and Startup folder
