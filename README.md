@@ -3,13 +3,9 @@
 A PowerShell-based Command-and-Control tool designed for **authorized Vulnerability Assessment & Penetration Testing (VAPT)** engagements.  
 This tool enables security testers with explicit permission to remotely execute commands, collect system information, and perform surveillance through a Telegram Bot interface.
 
----
-
 ## ⚙️ Complete Command List
 
-### Basic System Commands
-
-```bash
+# Basic System Commands
 sessioid ls                    # List directory contents  
 sessioid pwd                   # Show current directory  
 sessioid whoami                # Show current user context  
