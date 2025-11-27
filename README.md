@@ -34,7 +34,7 @@ This tool enables security testers with explicit permission to remotely execute 
 
 `sessionid download` [file_path]      # Upload file from target to C2  
 
-`sessionidupload` [URL] [dest]        # Download file from URL to target  
+`sessionid upload` [URL] [dest]        # Download file from URL to target  
 
 # Persistance & Management
 `sessionid persist`                  # Install multi-method persistence (survives reboot)  
