@@ -63,6 +63,7 @@ This tool enables security testers with explicit permission to remotely execute 
 
 ✅ Reliable - Multiple fallback methods for all operations
 
+
 ⚙️ Setup Instructions
 
 Before using this script, you must update the Telegram credentials in the script:
@@ -72,13 +73,11 @@ $global:TG_API_TOKEN = "your-bots-api-key"  # Replace with your Telegram Bot API
 
 How to create a Telegram Bot and obtain credentials
 
-Open Telegram and search for BotFather
+https://www.youtube.com/watch?v=iq8y9niOe4Y - Tutorial to get user id
 
-Send /newbot and follow the instructions to create your bot
+https://www.youtube.com/watch?v=UQrcOj63S2o - Tutorial to create Bot
 
 Copy the API token provided by BotFather and set it as TG_API_TOKEN
-
-To get your Chat ID, send a message to your bot and use bots like @userinfobot or Telegram API tools
 
 ⚠️ Legal & Ethical Notice
 
