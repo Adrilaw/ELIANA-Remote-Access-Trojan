@@ -13,14 +13,6 @@ This tool enables security testers with explicit permission to remotely execute 
 `sessionid netstat`                   # Show network connections  
 `sessionid sysinfo`                   # Get system information  
 
-# Basic System Commands
-`sessionid ls`                       # List directory contents
-`sessionid pwd`                       # Show current directory  
-`sessionid whoami`                  # Show current user context
-`sessionid ps`                        # List running processes
-`sessionid netstat`                   # Show network connections
-`sessionid sysinfo`                  # Get system information
-
 # Surveillance & Recording 
 `sessionid screenshot`                # Capture screen and upload  
 `sessionid record-audio` [sec]        # Record audio (e.g., record-audio 10)  
@@ -40,6 +32,7 @@ This tool enables security testers with explicit permission to remotely execute 
 
 # Custom Commands
 `sessioid [any powershell]`          # Execute any PowerShell command
+
 `sessioid ALL [command]`             # Execute on all active sessions
 
 ✨ Key Features
