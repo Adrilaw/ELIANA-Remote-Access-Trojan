@@ -79,7 +79,7 @@ How to create a Telegram Bot and obtain credentials:
 
 # ✍🏼 About Author
 
-I'm Dodin Mel-Adrien also know as Kidpentester/Adrilaw I built this as an intern , to demonstrate the use of telegram to gain access in a windows pc without being detected this , this tool was designed for vulnerability assesment and penetration testing .
+I'm Dodin Mel-Adrien also know as Kidpentester/Adrilaw I built this as an intern , to demonstrate the use of telegram to gain access a windows machine without being detected by antivirus software , this tool was designed explicitly for vulnerability assesment and penetration testing .
 # Ceedits
 
 🔥 https://github.com/FebVeg/TGRS
