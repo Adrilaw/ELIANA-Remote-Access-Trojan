@@ -64,8 +64,7 @@ This tool enables security testers with explicit permission to remotely execute 
 
 Before using this script, you must update the Telegram credentials in the script:
 
-$global:TG_CHAT_ID = "your-user-id"         # Replace with your Telegram Chat ID  
-$global:TG_API_TOKEN = "your-bots-api-key"  # Replace with your Telegram Bot API Token  
+$telegram_id, $api_token    = "id", "api-key" # Replace with your Telegram Chat ID # Replace with your Telegram Bot API Token 
 
 How to create a Telegram Bot and obtain credentials:
 
