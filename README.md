@@ -3,6 +3,8 @@
 A PowerShell-based Command-and-Control tool designed for **authorized Vulnerability Assessment & Penetration Testing (VAPT)** engagements.  
 This tool enables security testers with explicit permission to remotely execute commands, collect system information, and perform surveillance through a Telegram Bot interface.
 
+https://github.com/Adrilaw/ELIANA-Remote-Acces-Trojan/issues/1
+
 ## ⚙️ Complete Command List
 
 # Basic System Commands
