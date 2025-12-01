@@ -11,10 +11,9 @@ This tool enables security testers with explicit permission to remotely execute 
 
 Open the PowerShell file that was uploaded (ELIANA.ps1).
 
-Inside the script, you will see fields like:
+Inside the script, you will see those fields:
 
-$telegram_id  = "your_user_id_here"
-$api_token    = "your_api_token_here"
+$telegram_id, $api_token    = "your_user_id_here", "your_api_token_here"
 
 🎥 How to get your Telegram User ID:
 https://www.youtube.com/watch?v=iq8y9niOe4Y
