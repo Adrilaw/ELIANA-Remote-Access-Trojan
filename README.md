@@ -6,7 +6,7 @@ This tool enables security testers with explicit permission to remotely execute 
 <img width="413" height="584" alt="Image" src="https://github.com/user-attachments/assets/dd105739-85e3-4ab4-ba3e-79b6ae55e377" />
 
 
-# ⚙️ Setup Instructions for ELIANA.py Script
+# ⚙️ Setup Instructions for ELIANA
 
 ## ⚙️ Complete Command List
 
