@@ -6,17 +6,52 @@ This tool enables security testers with explicit permission to remotely execute 
 <img width="413" height="584" alt="Image" src="https://github.com/user-attachments/assets/dd105739-85e3-4ab4-ba3e-79b6ae55e377" />
 
 
-⚙️ Setup Instructions
+# ⚙️ Setup Instructions for ELIANA.py Script
 
-Before using this script, you must update the Telegram credentials in the script:
+Before running the script, you need to update the Telegram credentials inside the script to enable communication with your Telegram Bot.
 
-$telegram_id, $api_token    = "id", "api-key" # Replace with your Telegram Chat ID # Replace with your Telegram Bot API Token 
+---
 
-How to create a Telegram Bot and obtain credentials:
+### Step 1: Create Your Telegram Bot & Get Your User ID
 
-🎥 https://www.youtube.com/watch?v=iq8y9niOe4Y - Tutorial to get user id
+To set this up, please watch these quick tutorial videos:
 
-🎥 https://www.youtube.com/watch?v=UQrcOj63S2o - Tutorial to create Bot
+* **How to get your Telegram User ID:**
+  🎥 [Watch here](https://www.youtube.com/watch?v=iq8y9niOe4Y)
+
+* **How to create a Telegram Bot and get the API token:**
+  🎥 [Watch here](https://www.youtube.com/watch?v=UQrcOj63S2o)
+
+---
+
+### Step 2: Edit the Script with Your Credentials
+
+Once you have your **Telegram User ID** and **Bot API Token**, open the `ELIANA.ps1` script and find the following lines:
+
+```python
+$telegram_id, $api_token = "your_user_id_here", "your_api_token_here"
+```
+
+Replace `"your_user_id_here"` with your Telegram User ID, and `"your_api_token_here"` with your Bot’s API token.
+
+---
+
+### Step 3: Run the Script to Generate Required Files
+
+Run the script `ELIANA.py`. It will automatically create the necessary `.bat` and `.vbs` files for you.
+
+---
+
+### Step 4: Session Interaction
+
+When you run the Python script, it will prompt you to enter a **session ID**. This allows you to interact with different sessions if needed.
+
+* You can press **Enter** to accept the default session ID `99999`, or
+* Enter your own session ID as per your preference or script requirements.
+
+### Step 5: Running the Generated Files
+
+After the `.bat` and `.vbs` files are created, run them as needed to start the tool’s functionalities.
 
 
 ## ⚙️ Complete Command List
