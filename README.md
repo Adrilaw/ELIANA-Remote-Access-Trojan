@@ -5,15 +5,14 @@ This tool enables security testers with explicit permission to remotely execute 
 
 <img width="413" height="584" alt="Image" src="https://github.com/user-attachments/assets/dd105739-85e3-4ab4-ba3e-79b6ae55e377" />
 
-. Configuration
 
 ⚙️ ELIANA-RAT Setup
 
-Open the PowerShell file that was uploaded (ELIANA.ps1).
+# Open the PowerShell file that was uploaded (ELIANA.ps1).
 
-Inside the script, you will see those fields:
+# Inside the script, you will see those fields:
 
-$telegram_id, $api_token    = "your_user_id_here", "your_api_token_here"
+`$telegram_id, $api_token    = "your_user_id_here", "your_api_token_here"`
 
 🎥 How to get your Telegram User ID:
 https://www.youtube.com/watch?v=iq8y9niOe4Y
