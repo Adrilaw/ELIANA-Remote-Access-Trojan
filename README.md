@@ -79,7 +79,9 @@ https://www.youtube.com/watch?v=UQrcOj63S2o
 
 ## pwd              - Show current directory
 
-clear            - Clear terminal (simulated)
+## clear            - Clear terminal (simulated)
+
+
 
 ✨ Key Features
 
