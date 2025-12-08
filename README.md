@@ -63,3 +63,12 @@ TELEGRAM_TOKEN = "Bot API Key"
 TELEGRAM_CHAT_ID = "User ID"
 ```
 
+#### Example of correct configuration 
+
+```
+# ==================== CONFIG ====================
+# REPLACE THESE WITH YOUR CREDENTIALS!
+TELEGRAM_TOKEN = "8572280279:AAHV9S9dRWQFgBUY9XgUg5Sp5SNY9BNnSKw"
+TELEGRAM_CHAT_ID = "5285463344"
+# ===============================================
+```
