@@ -79,6 +79,7 @@ python3 ELIANA_RAT.py
 ```
 ##### Expected output:
 
+```
 ╔══════════════════════════════════════╗
 ║       ELIANA RAT v1.0 - Active       ║
 ╠══════════════════════════════════════╣
@@ -87,58 +88,64 @@ python3 ELIANA_RAT.py
 ║ System: Windows 10                   ║
 ╚══════════════════════════════════════╝
 📡 Waiting for commands...
+```
 
 ## ⚙️ **Available Commands**
 
 ### 🎥 **Media Capture**
 
-webcam — Take webcam photo
+`webcam` — Take webcam photo
 
-webcam 10 — Record webcam video
+`webcam` 10 — Record webcam video
 
-audio 10 — Record microphone audio
+`audio` 10 — Record microphone audio
+
 
 ### 📁 **File & Directory Operations**
 
-ls — List files
+`ls` — List files
 
-cd <folder> — Change directory
+`cd` <folder> — Change directory
 
-pwd — Show working directory
+`pwd` — Show working directory
 
-read <file> — Read file contents
+`read` <file> — Read file contents
 
-upload <file> — Upload file to operator
+`upload` <file> — Upload file to operator
 
-download <URL> — Download file
+`download` <URL> — Download file
+
 
 ### 🖥️ **System Information**
 
-sysinfo — System profile
+`sysinfo` — System profile
 
-ps — List processes
+`ps` — List processes
 
-netstat — Network connections
+`netstat` — Network connections
 
-ip — Network configuration
+`ip` — Network configuration
 
-wifi — Retrieve saved WiFi passwords
+`wifi` — Retrieve saved WiFi passwords
+
 
 ### 🔧 **System Control**
 
-shutdown — Shut down target
+`shutdown` — Shut down target
 
-reboot — Restart
+`reboot` — Restart
 
-lock — Lock system
+`lock` — Lock system
 
-defender — Attempt Defender bypass
+`defender` — Attempt Defender bypass
+
 
 ### 🛠️ **Utilities**
 
-cmd <command> — Execute shell command
+`cmd` <command> — Execute shell command
 
-clear — Clear terminal
+`clear` — Clear terminal
+
 
 ## ✨ **Key Features**
 
