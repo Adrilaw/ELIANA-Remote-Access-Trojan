@@ -1,4 +1,4 @@
-# **ELIANA – Remote Access Trojan (RAT)**  
+# **ELIANA – Remote Access Trojan (RAT) v1.0**  
 A Python-based Command-and-Control (C2) framework designed xclusively for authorized VAPT (Vulnerability Assessment & Penetration Testing).  
 ELIANA enables security testers with explicit permission to remotely execute commands, gather system information, and perform surveillance — all through a **Telegram Bot** interface.
 
