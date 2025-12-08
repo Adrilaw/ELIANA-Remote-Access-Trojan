@@ -1,0 +1,172 @@
+# =============================================
+# PYTHON RAT - COMPLETE DEPENDENCIES
+# =============================================
+
+# ============ CORE ESSENTIALS ==============
+requests==2.31.0
+urllib3==2.0.7
+pillow==10.1.0
+
+# ============ MEDIA CAPTURE ===============
+# Webcam and screen recording
+opencv-python==4.8.1.78
+numpy==1.24.4
+scipy==1.11.2
+
+# Audio recording - BOTH options included
+sounddevice==0.4.6
+soundfile==0.12.1
+pyaudio==0.2.13
+wave
+audioop
+
+# ============ SYSTEM MONITORING ===========
+psutil==5.9.6
+py-cpuinfo==9.0.0
+gpustat==1.0.0
+wmi==1.5.1
+pywinctl==0.0.48
+keyboard==0.13.5
+mouse==0.7.1
+screeninfo==0.8.1
+
+# ============ NETWORK TOOLS ===============
+python-nmap==0.7.1
+scapy==2.5.0
+netifaces==0.11.0
+ifaddr==0.2.0
+netaddr==0.9.0
+dnspython==2.4.2
+
+# ============ TELEGRAM BOT ================
+python-telegram-bot==20.5
+telegram==0.0.1
+pytelegrambotapi==4.14.0
+
+# ============ BUILD/EXE TOOLS =============
+pyinstaller==5.13.2
+auto-py-to-exe==2.36.0
+pyarmor==8.2.4
+py2exe==0.11.1.0
+cx-Freeze==6.15.4
+Nuitka==1.8.6
+pyoxidizer==0.26.0
+
+# ============ WINDOWS SPECIFIC ============
+pywin32==306
+pypiwin32==223
+winshell==0.6
+winregistry==0.3.2
+win10toast==0.9
+comtypes==1.2.0
+
+# ============ ENCRYPTION/SECURITY =========
+pycryptodome==3.19.1
+cryptography==41.0.5
+pycryptodomex==3.19.1
+rsa==4.9
+pyzipper==0.3.6
+rarfile==4.0
+
+# ============ FILE OPERATIONS =============
+watchdog==3.0.0
+pathlib2==2.3.7.post1
+send2trash==1.8.2
+patool==1.12
+filelock==3.13.1
+fasteners==0.18
+
+# ============ KEYLOGGING ==================
+pynput==1.7.6
+pyhook==1.5.1
+pyxhook==1.0.0
+
+# ============ SCREEN/REMOTE CONTROL =======
+pyautogui==0.9.54
+pyscreenshot==3.1
+mss==9.0.1
+pygetwindow==0.0.9
+pyrect==0.2.0
+pymsgbox==1.0.9
+
+# ============ CLIPBOARD ===================
+pyperclip==1.8.2
+clipboard==0.0.4
+xerox==0.4.1
+
+# ============ BROWSER DATA ================
+browser-cookie3==0.19.1
+pycryptodomex==3.19.1
+
+# ============ PROCESS INJECTION ===========
+pymem==1.9.0
+pefile==2023.2.7
+pydasm==1.5
+
+# ============ DISK/USB ===================
+wmi==1.5.1
+usb==1.0.2
+pyserial==3.5
+
+# ============ REGISTRY ===================
+winreg==1.0
+registry==0.0.1
+
+# ============ SYSTEM INFO ================
+platformdirs==4.0.0
+distro==1.8.0
+getmac==0.9.5
+public-ip==0.1.6
+
+# ============ COMPRESSION ================
+py7zr==0.20.7
+zipfile36==0.1.3
+tarfile==0.1.2
+
+# ============ UI/TERMINAL ================
+colorama==0.4.6
+rich==13.5.3
+termcolor==2.3.0
+blessed==1.20.0
+pyfiglet==0.8.post1
+
+# ============ CONFIG/LOG =================
+configparser==5.3.1
+pyyaml==6.0.1
+toml==0.10.2
+json5==0.9.14
+colorlog==6.7.0
+loguru==0.7.2
+
+# ============ WEB/SOCKS ==================
+socksio==1.0.0
+pysocks==1.7.1
+websocket-client==1.6.3
+websockets==12.0
+
+# ============ DATABASE ===================
+tinydb==4.8.0
+dataset==1.6.0
+pickledb==0.9.2
+
+# ============ MISC UTILITIES =============
+tzdata==2023.3
+python-dateutil==2.8.2
+pytz==2023.3
+tzlocal==5.0.1
+
+# ============ PACKAGING ==================
+setuptools==68.2.2
+wheel==0.41.3
+pip==23.3.1
+build==1.0.3
+twine==4.0.2
+
+# ============ DEPENDENCIES ===============
+certifi==2023.7.22
+charset-normalizer==3.3.1
+idna==3.4
+six==1.16.0
+typing-extensions==4.8.0
+importlib-metadata==6.8.0
+zipp==3.17.0
