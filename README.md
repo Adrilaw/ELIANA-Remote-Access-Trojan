@@ -95,7 +95,7 @@ python3 ELIANA_RAT.py
 
 # 🪟 **Build Windows Executable**
 
-## **If you're building an EXE for Windows, use auto-py-to-exe.**
+## **If you're building an EXE on Windows, use auto-py-to-exe.**
 
 ### ✔️ **Install auto-py-to-exe**
 ```
@@ -109,15 +109,9 @@ auto-py-to-exe
 
 ### ✔️ **Settings in the GUI**
 
-#### Script: ELIANA_RAT.py
+<img width="1139" height="897" alt="Screenshot 2025-12-08 215213" src="https://github.com/user-attachments/assets/cb00f7e8-13ab-4b1d-9f8a-c595b1019c2e" />
 
-### Onefile: ✔️ **Enabled**
-
-#### Console Window: ❌ Window-Based (No console)
-
-#### Icon (optional): icon.ico
-
-#### Then click Convert .py to .exe
+### Note - Ico is optional but for ex when doing a physical pentest , using the targets logo with exe could be useful as it would blend in the target environment. 
 
 #### Your executable will appear in:
 
