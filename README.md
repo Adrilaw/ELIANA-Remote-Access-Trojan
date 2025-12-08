@@ -157,7 +157,7 @@ you may rename the generated executable to something more neutral or context-app
 functionality of the compiled program.
 
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------
 ## ⚙️ **Available Commands**
 
 ### 🎥 **Media Capture**
