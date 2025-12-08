@@ -506,7 +506,7 @@ def get_telegram_updates():
 def main():
     """Main function"""
     print("╔══════════════════════════════════════╗")
-    print("║       Python RAT v2.0 - Active       ║")
+    print("║       Eliana RAT v1.0 - Active       ║")
     print("╠══════════════════════════════════════╣")
     print(f"║ Target: {TELEGRAM_CHAT_ID:30} ║")
     print(f"║ User: {os.getlogin():32} ║")
