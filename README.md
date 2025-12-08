@@ -107,11 +107,13 @@ pip install auto-py-to-exe
 auto-py-to-exe
 ```
 
+
 ### ✔️ **Settings in the GUI**
 
 <img width="1139" height="897" alt="Screenshot 2025-12-08 215213" src="https://github.com/user-attachments/assets/cb00f7e8-13ab-4b1d-9f8a-c595b1019c2e" />
 
-### Note - Ico is optional but for ex when doing a physical pentest , using the targets logo with exe could be useful as it would blend in the target environment. 
+
+### Note - Using Ico is optional but for example when doing a physical pentest , utilizing the  targets logo with the exe could be useful because target is like to trust an exe with it's logo. 
 
 #### Your executable will appear in:
 
