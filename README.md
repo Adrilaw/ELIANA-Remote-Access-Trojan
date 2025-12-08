@@ -6,22 +6,21 @@ ELIANA enables security testers with explicit permission to remotely execute com
 
 # 🚀 **Quick Setup**
 
-### **1. Clone the Repository**
+### **1. Clone the Repository & Install Requiremnts **
 ```bash
-1. Download ELIANA - Remote Access Trojan
 git clone https://github.com/Adrilaw/ELIANA-Remote-Access-Trojan.git
+
 cd ELIANA-Remote-Access-Trojan
 
-2. Install Dependencies
 pip install -r requirements.txt
 ```
 
-### 📋 **Configuration**
+# 📋 **Configuration**
 
 
-#### Step 1: Get Your Telegram Credentials
+## Step 1: Get Your Telegram Credentials
 
-1. Retrieve Your Telegram User ID
+### 1. Retrieve Your Telegram User ID
 
 Go to https://web.telegram.org
 
@@ -31,7 +30,7 @@ Send /start
 
 Copy your numerical User ID
 
-#### 2. Create a Telegram Bot
+### 2. Create a Telegram Bot
 
 Open Telegram
 
