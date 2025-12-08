@@ -13,6 +13,7 @@ This tool enables security testers with explicit permission to remotely execute 
 # Inside the script, you will see those fields you need to change it to your telegram id and bot api key:
 
 T1 = "Bot Api Key"  # 🔑
+
 T2 = "User ID"  # 🆔
 
 🎥 How to get your Telegram User ID:
