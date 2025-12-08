@@ -95,7 +95,7 @@ python3 ELIANA_RAT.py
 
 # 🪟 **Build Windows Executable**
 
-## **If you're building an EXE on Windows, use auto-py-to-exe.**
+## **If you're building an EXE on Windows 🪟, use auto-py-to-exe.**
 
 ### ✔️ **Install auto-py-to-exe**
 ```
@@ -118,6 +118,32 @@ auto-py-to-exe
 #### Your executable will appear in:
 
 `output/ELIANA_RAT.exe`
+
+
+
+## **If you're building an EXE on Linux🐧, use  PyInstaller.**
+
+### ✔️ Install PyInstaller###
+```
+pip install pyinstaller
+```
+
+✔️ Build the executable
+```
+ pyinstaller --onefile --windowed  --noconsole ELIANA_RAT.py
+```
+
+✔️ Output
+
+The executable will be created at:
+
+`dist/ELIANA_RAT`
+
+
+Make it executable:
+```
+chmod +x dist/ELIANA_RAT
+```
 
 
 ## ⚙️ **Available Commands**
