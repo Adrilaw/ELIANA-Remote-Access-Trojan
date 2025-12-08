@@ -12,7 +12,8 @@ This tool enables security testers with explicit permission to remotely execute 
 
 # Inside the script, you will see those fields you need to change it to your telegram id and bot api key:
 
-`$telegram_id, $api_token    = "your_user_id_here", "your_api_token_here"`
+T1 = "Bot Api Key"  # 🔑
+T2 = "User ID"  # 🆔
 
 🎥 How to get your Telegram User ID:
 https://www.youtube.com/watch?v=iq8y9niOe4Y
@@ -21,44 +22,6 @@ https://www.youtube.com/watch?v=iq8y9niOe4Y
 https://www.youtube.com/watch?v=UQrcOj63S2o
 
 ## ⚙️ Complete Command List
-
-# Basic System Commands
-`sessionid ls`                       # List directory contents  
-
-`sessionid pwd`                     # Show current directory  
-
-`sessionid whoami`                   # Show current user context 
-
-`sessionid ps`                       # List running processes  
-
-`sessionid netstat`                   # Show network connections  
-
-`sessionid sysinfo`                   # Get system information  
-
-# Surveillance & Recording 
-`sessionid screenshot`                # Capture screen and upload  
-
-`sessionid record-audio` [sec]        # Record audio (e.g., record-audio 10)  
-
-`sessionid screen-record` [sec]       # Record screen (e.g., screen-record 10)
-
-
-# Data Collection
-`sessionid download` [file_path]      # Upload file from target to C2  
-
-`sessionid upload` [URL] [dest]        # Download file from URL to target  
-
-# Persistance & Management
-`sessionid persist`                  # Install multi-method persistence (survives reboot)  
-
-`sessionid unpersist`                # Remove all persistence methods  
-
-`sessionid exit`                     # Terminate C2 session  
-
-# Custom Commands
-`sessioid [any powershell]`          # Execute any PowerShell command
-
-`sessioid ALL [command]`             # Execute on all active sessions
 
 
 ✨ Key Features
