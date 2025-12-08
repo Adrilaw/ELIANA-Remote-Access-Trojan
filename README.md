@@ -22,65 +22,51 @@ https://www.youtube.com/watch?v=iq8y9niOe4Y
 🎥 How to create a Telegram Bot (API Token):
 https://www.youtube.com/watch?v=UQrcOj63S2o
 
-# 🔥 RAT CONTROL PANEL
+🚀 Features
+📸 Media Capture
+webcam - Take webcam photo
 
+webcam 10 - Record webcam video (specify seconds)
 
-# 📌 MEDIA CAPTURE
+audio 10 - Record microphone audio (specify seconds)
 
+📁 File Operations
+ls - List files in current directory
 
-## webcam           - Take webcam photo
+cd folder - Change to folder
 
-## webcam 10        - Record webcam video (seconds)
+read file.txt - Read file contents
 
-## audio 10         - Record microphone audio (seconds)
+download URL - Download file from URL
 
+upload file.txt - Upload file to operator
 
-# 📌 FILE OPERATIONS
+pwd - Show current directory
 
+💻 System Information
+sysinfo - Show detailed system information
 
-## ls               - List files in current directory
+ps - List running processes
 
-## cd folder        - Change to folder
+netstat - Show network connections
 
-## read file.txt    - Read file contents
+ip - Show network configuration
 
-## download URL     - Download file from URL
+wifi - Extract WiFi passwords
 
-## upload file.txt  - Upload file to me
+⚡ System Control
+shutdown - Shutdown computer
 
+reboot - Restart computer
 
-# 📌 SYSTEM INFORMATION
+lock - Lock workstation
 
-## sysinfo          - Show system information
+defender - Disable Windows Defender
 
-## ps               - List running processes
+🔧 Utilities
+cmd command - Execute shell command
 
-## netstat          - Show network connections
-
-## ip               - Show network configuration
-
-## wifi             - Extract WiFi passwords
-
-
-# 📌 SYSTEM CONTROL
-
-## shutdown         - Shutdown computer
-
-## reboot           - Restart computer
-
-## lock             - Lock workstation
-
-## defender         - Disable Windows Defender
-
-
-# 📌 UTILITIES
-
-## cmd command      - Execute shell command
-
-## pwd              - Show current directory
-
-## clear            - Clear terminal (simulated)
-
+clear - Clear terminal (simulated)
 
 
 ✨ Key Features
