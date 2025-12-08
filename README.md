@@ -139,9 +139,22 @@ pip install pyinstaller
 
 The executable will be created at:
 
-`dist/ELIANA_RAT`
+`dist/ELIANA_RAT.exe`
 
 
+## **File Naming Recommendation**
+For better usability and to avoid drawing unnecessary attention when sharing the application, 
+you may rename the generated executable to something more neutral or context-appropriate 
+(e.g., a name that fits the environment where it will be used). 
+
+### Choose names that look natural to the target operating system, such as:
+- "Updater.exe"
+- "SystemSync.exe"
+- "DocumentViewer.exe"
+- "ReportManager.exe"
+
+### **This is purely for organizational and presentation purposes and does not affect the**
+functionality of the compiled program.
 
 
 
