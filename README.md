@@ -3,7 +3,8 @@ A Python-based Command-and-Control (C2) framework designed xclusively for author
 ELIANA enables security testers with explicit permission to remotely execute commands, gather system information, and perform surveillance — all through a **Telegram Bot** interface.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
-<img width="413" height="584" alt="Image" src="https://github.com/user-attachments/assets/dd105739-85e3-4ab4-ba3e-79b6ae55e377" />
+<img width="1139" height="897" alt="$R188Y02_edited" src="https://github.com/user-attachments/assets/ba2b62dc-f8e2-4e6f-ac36-df030dfbbbd7" />
+
 
 
 
