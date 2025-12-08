@@ -8,7 +8,7 @@ This tool enables security testers with explicit permission to remotely execute 
 
 ⚙️ ELIANA-RAT Setup
 
-# Open the ELIANA_RAT.PY .
+# Open the ELIANA_RAT.py 
 
 # Inside the script, you will see those fields you need to change them to your telegram user id and bot api key:
 
@@ -20,6 +20,7 @@ https://www.youtube.com/watch?v=iq8y9niOe4Y
 
 🎥 How to create a Telegram Bot (API Token):
 https://www.youtube.com/watch?v=UQrcOj63S2o
+
 
 # 🚀 Features
 📸 Media Capture
