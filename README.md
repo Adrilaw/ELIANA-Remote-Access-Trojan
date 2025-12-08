@@ -48,23 +48,18 @@ Copy the API token provided
 Open the script:
 
 #### Windows
+```bash
 notepad ELIANA_RAT.py
+```
 
 #### Linux / macOS
+```bash
 nano ELIANA_RAT.py
-
+```
 
 #### Find and edit:
-
+```
 TELEGRAM_TOKEN = "Bot API Key"
 TELEGRAM_CHAT_ID = "User ID"
+```
 
-
-#### Replace with your credentials:
-
-# ==================== CONFIG ====================
-
-TELEGRAM_TOKEN = "YOUR_BOT_API_KEY"
-TELEGRAM_CHAT_ID = "YOUR_TELEGRAM_USER_ID"
-
-# ==============================================
