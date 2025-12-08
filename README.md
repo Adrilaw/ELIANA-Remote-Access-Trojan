@@ -12,9 +12,8 @@ This tool enables security testers with explicit permission to remotely execute 
 
 # Inside the script, you will see those fields you need to change it to your telegram id and bot api key:
 
-T1 = "Bot Api Key"  # 🔑
-
-T2 = "User ID"  # 🆔
+TELEGRAM_TOKEN = "Bot API Key"
+TELEGRAM_CHAT_ID = "User ID"
 
 🎥 How to get your Telegram User ID:
 https://www.youtube.com/watch?v=iq8y9niOe4Y
@@ -22,51 +21,52 @@ https://www.youtube.com/watch?v=iq8y9niOe4Y
 🎥 How to create a Telegram Bot (API Token):
 https://www.youtube.com/watch?v=UQrcOj63S2o
 
-🚀 Features
+# 🚀 Features
 📸 Media Capture
-webcam - Take webcam photo
+`webcam` - Take webcam photo
 
-webcam 10 - Record webcam video (specify seconds)
+`webcam` 10 - Record webcam video (specify seconds)
 
-audio 10 - Record microphone audio (specify seconds)
+`audio 10` - Record microphone audio (specify seconds)
 
-📁 File Operations
-ls - List files in current directory
+# 📁 File Operations
+`ls` - List files in current directory
 
-cd folder - Change to folder
+`cd` folder - Change to folder
 
-read file.txt - Read file contents
+`read` file.txt - Read file contents
 
-download URL - Download file from URL
+`download URL` - Download file from URL
 
-upload file.txt - Upload file to operator
+`upload file.txt` - Upload file to operator
 
-pwd - Show current directory
+`pwd` - Show current directory
 
-💻 System Information
-sysinfo - Show detailed system information
+# 💻 System Information
+`sysinfo` - Show detailed system information
 
-ps - List running processes
+`ps` - List running processes
 
-netstat - Show network connections
+`netstat` - Show network connections
 
-ip - Show network configuration
+`ip` - Show network configuration
 
-wifi - Extract WiFi passwords
+`wifi` - Extract WiFi passwords
 
-⚡ System Control
-shutdown - Shutdown computer
+# ⚡ System Control
+`shutdown` - Shutdown computer
 
-reboot - Restart computer
+`reboot` - Restart computer
 
-lock - Lock workstation
+`lock` - Lock workstation
 
-defender - Disable Windows Defender
+`defender` - Disable Windows Defender
 
-🔧 Utilities
-cmd command - Execute shell command
+# 🔧 Utilities
+`cmd command` - Execute shell command
 
-clear - Clear terminal (simulated)
+`clear` - Clear terminal (simulated)
+
 
 
 ✨ Key Features
