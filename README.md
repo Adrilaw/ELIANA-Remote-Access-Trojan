@@ -9,7 +9,7 @@ ELIANA enables security testers with explicit permission to remotely execute com
 
 # 🚀 **Quick Setup**
 
-### 1. Clone the Repository & Install Requiremnts
+### Step 1. Clone the Repository & Install Requiremnts
 ```bash
 git clone https://github.com/Adrilaw/ELIANA-Remote-Access-Trojan.git
 
@@ -21,7 +21,7 @@ pip install -r requirements.txt
 # 📋 **Configuration**
 
 
-## Step 1: Get Your Telegram Credentials
+## Step 2.  Get Your Telegram Credentials and configure .py script 
 
 ### 1. Retrieve Your Telegram User ID
 
@@ -92,6 +92,37 @@ python3 ELIANA_RAT.py
 ╚══════════════════════════════════════╝
 📡 Waiting for commands...
 ```
+
+# 🪟 **Build Windows Executable**
+
+## **If you're building an EXE for Windows, use auto-py-to-exe.**
+
+### ✔️ **Install auto-py-to-exe**
+```
+pip install auto-py-to-exe
+```
+
+### ✔️ **Launch**
+```
+auto-py-to-exe
+```
+
+### ✔️ **Settings in the GUI**
+
+#### Script: ELIANA_RAT.py
+
+### Onefile: ✔️ **Enabled**
+
+#### Console Window: ❌ Window-Based (No console)
+
+#### Icon (optional): icon.ico
+
+#### Then click Convert .py to .exe
+
+#### Your executable will appear in:
+
+`output/ELIANA_RAT.exe`
+
 
 ## ⚙️ **Available Commands**
 
