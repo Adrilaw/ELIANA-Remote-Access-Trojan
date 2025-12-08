@@ -34,6 +34,7 @@ https://www.youtube.com/watch?v=UQrcOj63S2o
 
 ## audio 10         - Record microphone audio (seconds)
 
+
 # 📌 FILE OPERATIONS
 
 
@@ -47,6 +48,7 @@ https://www.youtube.com/watch?v=UQrcOj63S2o
 
 ## upload file.txt  - Upload file to me
 
+
 # 📌 SYSTEM INFORMATION
 
 ## sysinfo          - Show system information
@@ -59,6 +61,7 @@ https://www.youtube.com/watch?v=UQrcOj63S2o
 
 ## wifi             - Extract WiFi passwords
 
+
 # 📌 SYSTEM CONTROL
 
 ## shutdown         - Shutdown computer
@@ -68,6 +71,7 @@ https://www.youtube.com/watch?v=UQrcOj63S2o
 ## lock             - Lock workstation
 
 ## defender         - Disable Windows Defender
+
 
 # 📌 UTILITIES
 
