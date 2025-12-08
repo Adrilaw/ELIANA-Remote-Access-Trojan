@@ -8,9 +8,9 @@ This tool enables security testers with explicit permission to remotely execute 
 
 ⚙️ ELIANA-RAT Setup
 
-# Open the PowerShell file that was uploaded (ELIANA.ps1).
+# Open the ELIANA_RAT.PY .
 
-# Inside the script, you will see those fields you need to change it to your telegram id and bot api key:
+# Inside the script, you will see those fields you need to change them to your telegram user id and bot api key:
 
 TELEGRAM_TOKEN = "Bot API Key"
 TELEGRAM_CHAT_ID = "User ID"
