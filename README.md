@@ -23,7 +23,8 @@ https://www.youtube.com/watch?v=UQrcOj63S2o
 
 
 # 🚀 Features
-📸 Media Capture
+
+# 📸 Media Capture
 `webcam` - Take webcam photo
 
 `webcam` 10 - Record webcam video (specify seconds)
