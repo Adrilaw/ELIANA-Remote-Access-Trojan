@@ -93,7 +93,9 @@ python3 ELIANA_RAT.py
 📡 Waiting for commands...
 ```
 
-# 🪟 **Build Windows Executable**
+# ⚙️ **Crafing the exe file**
+
+## Step 3. 🪟 **Build Windows Executable**
 
 ## **If you're building an EXE on Windows 🪟, use auto-py-to-exe.**
 
