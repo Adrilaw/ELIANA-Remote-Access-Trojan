@@ -130,22 +130,19 @@ auto-py-to-exe
 pip install pyinstaller
 ```
 
-✔️ Build the executable
+### ✔️ **Build the executable**
 ```
  pyinstaller --onefile --windowed  --noconsole ELIANA_RAT.py
 ```
 
-✔️ Output
+### ✔️ **Output**
 
 The executable will be created at:
 
 `dist/ELIANA_RAT`
 
 
-Make it executable:
-```
-chmod +x dist/ELIANA_RAT
-```
+
 
 
 ## ⚙️ **Available Commands**
