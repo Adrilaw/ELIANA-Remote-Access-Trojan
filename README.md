@@ -41,3 +41,30 @@ Send /newbot
 Set bot name + username
 
 Copy the API token provided
+
+
+### 3. Configure ELIANA_RAT.py
+
+Open the script:
+
+#### Windows
+notepad ELIANA_RAT.py
+
+#### Linux / macOS
+nano ELIANA_RAT.py
+
+
+#### Find and edit:
+
+TELEGRAM_TOKEN = "Bot API Key"
+TELEGRAM_CHAT_ID = "User ID"
+
+
+#### Replace with your credentials:
+
+# ==================== CONFIG ====================
+
+TELEGRAM_TOKEN = "YOUR_BOT_API_KEY"
+TELEGRAM_CHAT_ID = "YOUR_TELEGRAM_USER_ID"
+
+# ==============================================
