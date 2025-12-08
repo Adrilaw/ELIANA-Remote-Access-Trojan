@@ -1,8 +1,7 @@
 # **ELIANA – Remote Access Trojan (RAT)**  
-A Python-based Command-and-Control (C2) framework designed **exclusively for authorized VAPT (Vulnerability Assessment & Penetration Testing)**.  
+A Python-based Command-and-Control (C2) framework designed xclusively for authorized VAPT (Vulnerability Assessment & Penetration Testing).  
 ELIANA enables security testers with explicit permission to remotely execute commands, gather system information, and perform surveillance — all through a **Telegram Bot** interface.
 
----
 
 # 🚀 **Quick Setup**
 
@@ -178,14 +177,13 @@ https://github.com/gunzf0x/BypassAMSI_PSRevshell
 
 ELIANA is licensed under the:
 
-GNU General Public License
+[GNU General Public License](LICENSE)
 
-ELIANA Commercial License
+[ELIANA Commercial License](C-LICENSE)
+
 
 ## ⚠️ **Legal & Ethical Notice**
 
 This tool is for authorized penetration testing only, with written permission.
 Any unauthorized use — including surveillance, credential harvesting, persistence installation, or system manipulation — is illegal and unethical.
-
-Use responsibly.
-Operate within the law.
+I should not be responsible for unethical use of this tool.
