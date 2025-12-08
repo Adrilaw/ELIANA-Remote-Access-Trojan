@@ -22,8 +22,43 @@ https://www.youtube.com/watch?v=iq8y9niOe4Y
 🎥 How to create a Telegram Bot (API Token):
 https://www.youtube.com/watch?v=UQrcOj63S2o
 
-## ⚙️ Complete Command List
+🔥 RAT CONTROL PANEL
+────────────────────
 
+📌 MEDIA CAPTURE
+────────────────────────
+webcam           - Take webcam photo
+webcam 10        - Record webcam video (seconds)
+audio 10         - Record microphone audio (seconds)
+
+📌 FILE OPERATIONS
+────────────────────────
+ls               - List files in current directory
+cd folder        - Change to folder
+read file.txt    - Read file contents
+download URL     - Download file from URL
+upload file.txt  - Upload file to me
+
+📌 SYSTEM INFORMATION
+────────────────────────
+sysinfo          - Show system information
+ps               - List running processes
+netstat          - Show network connections
+ip               - Show network configuration
+wifi             - Extract WiFi passwords
+
+📌 SYSTEM CONTROL
+────────────────────────
+shutdown         - Shutdown computer
+reboot           - Restart computer
+lock             - Lock workstation
+defender         - Disable Windows Defender
+
+📌 UTILITIES
+────────────────────────
+cmd command      - Execute shell command
+pwd              - Show current directory
+clear            - Clear terminal (simulated)
 
 ✨ Key Features
 
