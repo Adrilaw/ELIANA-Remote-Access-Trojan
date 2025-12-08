@@ -22,61 +22,58 @@ https://www.youtube.com/watch?v=iq8y9niOe4Y
 🎥 How to create a Telegram Bot (API Token):
 https://www.youtube.com/watch?v=UQrcOj63S2o
 
-🔥 RAT CONTROL PANEL
-────────────────────
+# 🔥 RAT CONTROL PANEL
 
-📌 MEDIA CAPTURE
-────────────────────────
 
-webcam           - Take webcam photo
+# 📌 MEDIA CAPTURE
 
-webcam 10        - Record webcam video (seconds)
 
-audio 10         - Record microphone audio (seconds)
+## webcam           - Take webcam photo
 
-📌 FILE OPERATIONS
-────────────────────────
+## webcam 10        - Record webcam video (seconds)
 
-ls               - List files in current directory
+## audio 10         - Record microphone audio (seconds)
 
-cd folder        - Change to folder
+# 📌 FILE OPERATIONS
 
-read file.txt    - Read file contents
 
-download URL     - Download file from URL
+## ls               - List files in current directory
 
-upload file.txt  - Upload file to me
+## cd folder        - Change to folder
 
-📌 SYSTEM INFORMATION
-────────────────────────
+## read file.txt    - Read file contents
 
-sysinfo          - Show system information
+## download URL     - Download file from URL
 
-ps               - List running processes
+## upload file.txt  - Upload file to me
 
-netstat          - Show network connections
+# 📌 SYSTEM INFORMATION
 
-ip               - Show network configuration
+## sysinfo          - Show system information
 
-wifi             - Extract WiFi passwords
+## ps               - List running processes
 
-📌 SYSTEM CONTROL
-────────────────────────
+## netstat          - Show network connections
 
-shutdown         - Shutdown computer
+## ip               - Show network configuration
 
-reboot           - Restart computer
+## wifi             - Extract WiFi passwords
 
-lock             - Lock workstation
+# 📌 SYSTEM CONTROL
 
-defender         - Disable Windows Defender
+## shutdown         - Shutdown computer
 
-📌 UTILITIES
-────────────────────────
+## reboot           - Restart computer
 
-cmd command      - Execute shell command
+## lock             - Lock workstation
 
-pwd              - Show current directory
+## defender         - Disable Windows Defender
+
+# 📌 UTILITIES
+
+## cmd command      - Execute shell command
+
+## pwd              - Show current directory
 
 clear            - Clear terminal (simulated)
 
