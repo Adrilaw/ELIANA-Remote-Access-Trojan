@@ -156,7 +156,7 @@ pytz==2023.3
 tzlocal==5.0.1
 
 # ============ PACKAGING ==================
-setuptools==68.2.2
+setuptools==78.1.1
 wheel==0.41.3
 pip==23.3.1
 build==1.0.3
