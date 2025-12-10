@@ -163,7 +163,7 @@ build==1.0.3
 twine==4.0.2
 
 # ============ DEPENDENCIES ===============
-certifi==2023.7.22
+certifi==2024.7.4
 charset-normalizer==3.3.1
 idna==3.4
 six==1.16.0
