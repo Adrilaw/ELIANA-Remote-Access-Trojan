@@ -44,7 +44,7 @@ telegram==0.0.1
 pytelegrambotapi==4.14.0
 
 # ============ BUILD/EXE TOOLS =============
-pyinstaller==5.13.2
+pyinstaller==6.15.0
 auto-py-to-exe==2.36.0
 pyarmor==8.2.4
 py2exe==0.11.1.0
