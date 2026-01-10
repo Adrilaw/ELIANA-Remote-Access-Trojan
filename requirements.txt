@@ -158,7 +158,7 @@ tzlocal==5.0.1
 # ============ PACKAGING ==================
 setuptools==68.2.2
 wheel==0.41.3
-pip==23.3.1
+pip==25.3
 build==1.0.3
 twine==4.0.2
 
